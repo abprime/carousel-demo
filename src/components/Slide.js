@@ -1,9 +1,14 @@
 import React from "react";
 
-const Slide = ({ imageSrc, center, position, width }) => {
+const Slide = ({ imageSrc, center }) => {
   return (
     <div>
-      <img src={imageSrc}></img>
+      {(center && (
+        <img
+          src={imageSrc}
+          style={{ transform: "scale(1.75)", border: "2px solid gray" }}
+        ></img>
+      )) || <img src={imageSrc}></img>}
     </div>
   );
 };
