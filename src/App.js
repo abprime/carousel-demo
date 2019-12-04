@@ -11,11 +11,11 @@ const App = () => {
 
   useEffect(() => {
     const loadImages = () => {
-      fetch("http://www.splashbase.co/api/v1/images/latest")
+      fetch("https://api.github.com/users?since=135")
         .then(resp => resp.json())
         .then(data => {
           console.log(data);
-          let imageUrls = data.images.map(r => r.url);
+          let imageUrls = data.map(r => r.avatar_url);
           setImages(imageUrls);
         });
     };
